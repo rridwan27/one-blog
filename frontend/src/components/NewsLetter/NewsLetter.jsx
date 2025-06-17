@@ -24,7 +24,7 @@ const Newsletter = () => {
             </h1>
             <p className="text-lg">
               Subscribe to our newsletter to get the latest news and updates
-              from our blog.
+              from our blogs.
             </p>
           </div>
           <div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end">
