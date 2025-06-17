@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with React",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS44cBJfuW1hkbQ65rsWadxzyUTifhzD8pXoQ&s",
+    "category": "Technology",
+    "shortDescription": "Learn the basics of React in this beginner-friendly guide.",
+    "longDescription": "React is a popular JavaScript library for building user interfaces. In this comprehensive guide, we'll cover everything from setting up your first React project to understanding components, state, and props. By the end of this article, you'll have a solid foundation to start building your own React applications."
+  },
+  {
+    "id": 2,
+    "title": "Healthy Eating Habits",
+    "imageUrl": "https://www.shutterstock.com/shutterstock/videos/3637546231/thumb/1.jpg?ip=x480",
+    "category": "Health",
+    "shortDescription": "Simple changes for a healthier lifestyle through better eating.",
+    "longDescription": "Nutrition plays a vital role in our overall health and wellbeing. This article explores practical ways to improve your diet, including portion control, incorporating more fruits and vegetables, and understanding macronutrients. We'll also debunk some common nutrition myths and provide easy-to-follow meal planning tips."
+  },
+  {
+    "id": 3,
+    "title": "Travel Guide: Bali",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZ-Ai2a6j_Vir4c1GjaSIctRUHVH_Sx-UMg&s",
+    "category": "Travel",
+    "shortDescription": "Everything you need to know for your perfect Bali vacation.",
+    "longDescription": "Bali, the Island of the Gods, offers something for every traveler. From the stunning beaches of Seminyak to the cultural heart of Ubud, this guide covers all the must-see locations, best times to visit, local customs to respect, and hidden gems off the beaten path. We'll also include recommendations for accommodations ranging from budget to luxury."
+  },
+  {
+    "id": 4,
+    "title": "Introduction to Python Programming",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA58mH1EAjc2uEChw2pMg-Lkm9iUhR1U6Fbw&s",
+    "category": "Technology",
+    "shortDescription": "A beginner's guide to Python programming language.",
+    "longDescription": "Python has become one of the most popular programming languages due to its simplicity and versatility. This tutorial walks you through installing Python, understanding basic syntax, working with data structures, and writing your first programs. Whether you're interested in web development, data science, or automation, Python is a great language to learn."
+  },
+  {
+    "id": 5,
+    "title": "Mindfulness Meditation Techniques",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv0X9FNZOShWbgMwhAZEXvM9-M8Vso-ZD8tg&s",
+    "category": "Wellness",
+    "shortDescription": "Reduce stress and improve focus with these meditation.",
+    "longDescription": "Mindfulness meditation has been scientifically proven to reduce stress, improve focus, and enhance emotional wellbeing. This article introduces several meditation techniques suitable for beginners, including breath awareness, body scans, and loving-kindness meditation. We'll also discuss how to establish a consistent practice and overcome common challenges."
+  },
+  {
+    "id": 6,
+    "title": "Sustainable Living at Home",
+    "imageUrl": "https://i0.wp.com/simpleandsoulful.blog/wp-content/uploads/2021/12/intentional-living-blogs.png?fit=775%2C450&ssl=1",
+    "category": "Lifestyle",
+    "shortDescription": "Easy ways to make your home more eco-friendly.",
+    "longDescription": "Reducing your environmental impact starts at home. This comprehensive guide covers practical steps you can take to live more sustainably, including energy efficiency improvements, waste reduction strategies, water conservation methods, and ethical consumption choices. We'll provide cost-effective solutions that can make a big difference over time."
+  }
+]
