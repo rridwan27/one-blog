@@ -6,56 +6,49 @@ const Newsletter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-    if (!email || !isValidEmail) {
-      toast.error("Please enter a valid email address");
-      return;
+    if (email) {
+      setEmail("");
+      toast.success("Thank you for subscribing!");
+    } else {
+      toast.error("Please enter your email");
     }
-
-    setEmail("");
-    toast.success("Thank you for subscribing!");
   };
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-[#0c0e16] text-gray-800 dark:text-gray-200 rounded-lg shadow-inner">
-      <section className="container mx-auto">
-        <div className="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-2">
-              Get updates with the latest blogs
-            </h2>
-            <p className="text-base text-gray-600 dark:text-gray-400">
-              Subscribe to our newsletter and never miss an update from OneBlog!
+    <div className="">
+      <section className="py-20 newsletter bg-gray-100 dark:bg-gray-900">
+        <div className="container mx-auto flex flex-col justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-between lg:flex-row">
+          <div className="flex flex-col space-y-4 text-center lg:text-left">
+            <h1 className="text-4xl font-bold leading-none ">
+              Get update about new recipe
+            </h1>
+            <p className="text-lg">
+              Stay updated with our latest recipes and cooking tips. Don't miss
+              any recipe update.
             </p>
           </div>
-
-          {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="w-full sm:w-[500px] flex flex-col sm:flex-row items-stretch gap-4 sm:gap-0 shadow-lg rounded-lg overflow-hidden border border-violet-600"
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-grow px-4 py-3 text-sm bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none"
-              aria-label="Email Address"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
+          <div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end">
+            <div className="flex flex-row">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your Eamail"
+                className="w-4/5 p-3 rounded-l-lg sm:w-2/3 border border-violet-600"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="w-2/5 p-3 font-semibold cursor-pointer rounded-r-lg sm:w-1/3 hover:bg-violet-800 bg-violet-600"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
 };
-
 export default Newsletter;
