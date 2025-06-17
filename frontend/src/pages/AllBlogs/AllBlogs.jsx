@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { motion } from "framer-motion";
 import BlogGrid from "../../components/BlogGrid/BlogGrid";
 import axios from "axios";
@@ -11,7 +11,7 @@ const AllBlogs = () => {
   const [category, setCategory] = useState("All");
   const [filteredData, setFilteredData] = useState([]);
   const [search, setSearch] = useState("");
-  const { loading } = use(AuthContext);
+  const { loading } = useContext(AuthContext);
 
   useEffect(() => {
     axios
@@ -23,6 +23,7 @@ const AllBlogs = () => {
       })
       .then((res) => {
         setData(res.data.posts);
+        setFilteredData(res.data.posts); // show all initially
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
@@ -35,27 +36,24 @@ const AllBlogs = () => {
     if (category !== "All") {
       result = result.filter((blog) => blog.category === category);
     }
+
     if (search) {
       const term = search.toLowerCase();
-      result = result.filter(
-        (blog) =>
-          blog.title.toLowerCase().includes(term) ||
-          blog.shortDescription.toLowerCase().includes(term) ||
-          blog.longDescription.toLowerCase().includes(term)
-      );
+      result = result.filter((blog) => blog.title.toLowerCase().includes(term));
     }
 
     setFilteredData(result);
   };
 
-  useEffect(() => {
-    applyFilters();
-  }, [category, search, data]);
-
   const handleSearch = (e) => {
     e.preventDefault();
     applyFilters();
   };
+
+  useEffect(() => {
+    // auto-filter only when category changes
+    applyFilters();
+  }, [category]);
 
   if (loading) {
     return (
@@ -77,7 +75,7 @@ const AllBlogs = () => {
             >
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search by title"
                 className="w-full p-2 border border-gray-300 rounded-l-full focus:outline-none"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -88,72 +86,20 @@ const AllBlogs = () => {
             </form>
             <div className="flex flex-1 max-w-md w-full">
               <select
-                name=""
-                id=""
                 className="w-full cursor-pointer p-2 border focus:outline-none text-center border-gray-300 rounded"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option
-                  value="All"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  All
-                </option>
-                <option
-                  value="Politics"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Politics
-                </option>
-                <option
-                  value="Business"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Business
-                </option>
-                <option
-                  value="Health"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Health
-                </option>
-                <option
-                  value="Technology"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Technology
-                </option>
-                <option
-                  value="Sports"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Sports
-                </option>
-                <option
-                  value="Travel"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Travel
-                </option>
-                <option
-                  value="Wellness"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Wellness
-                </option>
-                <option
-                  value="Lifestyle"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Lifestyle
-                </option>
-                <option
-                  value="Other"
-                  className="bg-gray-900 cursor-pointer text-gray-100"
-                >
-                  Other
-                </option>
+                <option value="All">All</option>
+                <option value="Politics">Politics</option>
+                <option value="Business">Business</option>
+                <option value="Health">Health</option>
+                <option value="Technology">Technology</option>
+                <option value="Sports">Sports</option>
+                <option value="Travel">Travel</option>
+                <option value="Wellness">Wellness</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Other">Other</option>
               </select>
             </div>
           </div>
@@ -174,4 +120,5 @@ const AllBlogs = () => {
     </Box>
   );
 };
+
 export default AllBlogs;
