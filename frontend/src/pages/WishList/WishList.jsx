@@ -10,7 +10,7 @@ const WishList = () => {
     const fetchWishList = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/post/wishlist",
+          "https://one-blog-tr95.onrender.com/api/v1/post/wishlist",
           {
             withCredentials: true,
             headers: {
@@ -30,7 +30,7 @@ const WishList = () => {
   const handleRemoveFromWishlist = async (postId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/post/wishlist/${postId}`,
+        `https://one-blog-tr95.onrender.com/api/v1/post/wishlist/${postId}`,
         {
           withCredentials: true,
           headers: {

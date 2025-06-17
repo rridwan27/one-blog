@@ -31,7 +31,7 @@ const BlogPostCard = ({ blog }) => {
     setWishlistLoading(true);
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/post/wishlist/${id}`,
+        `https://one-blog-tr95.onrender.com/api/v1/post/wishlist/${id}`,
         {},
         {
           withCredentials: true,

@@ -74,7 +74,7 @@ const UpdatePost = () => {
       updatedData.append("longDescription", formData.longDescription);
 
       const response = await axios.put(
-        `http://localhost:5000/api/v1/post/update/${postData._id}`,
+        `https://one-blog-tr95.onrender.com/api/v1/post/update/${postData._id}`,
         updatedData,
         {
           headers: {

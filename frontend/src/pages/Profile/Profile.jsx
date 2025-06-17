@@ -14,9 +14,12 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/user/me", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://one-blog-tr95.onrender.com/api/v1/user/me",
+          {
+            withCredentials: true,
+          }
+        );
         setProfile(res.data.user);
         setUpdateProfile({
           fullName: res.data.user.fullName || "",
@@ -37,7 +40,7 @@ const Profile = () => {
     const fetchMyPosts = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/v1/post/my-posts",
+          "https://one-blog-tr95.onrender.com/api/v1/post/my-posts",
           {
             withCredentials: true,
           }
@@ -57,7 +60,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/v1/user/update`,
+        `https://one-blog-tr95.onrender.com/api/v1/user/update`,
         updateProfile,
         {
           withCredentials: true,
@@ -87,7 +90,7 @@ const Profile = () => {
     if (result.isConfirmed) {
       try {
         const response = await axios.delete(
-          `http://localhost:5000/api/v1/post/delete/${id}`,
+          `https://one-blog-tr95.onrender.com/api/v1/post/delete/${id}`,
           {
             withCredentials: true,
             headers: {

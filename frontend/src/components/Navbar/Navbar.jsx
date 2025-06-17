@@ -36,7 +36,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios.post(
-      "http://localhost:5000/api/v1/user/logout",
+      "https://one-blog-tr95.onrender.com/api/v1/user/logout",
       {},
       {
         headers: {

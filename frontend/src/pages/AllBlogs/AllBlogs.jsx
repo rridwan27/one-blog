@@ -15,7 +15,7 @@ const AllBlogs = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/post/allpost", {
+      .get("https://one-blog-tr95.onrender.com/api/v1/post/allpost", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

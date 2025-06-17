@@ -34,7 +34,7 @@ const BlogDetails = () => {
         return;
       }
       const response = await axios.post(
-        `http://localhost:5000/api/v1/post/comment/${_id}`,
+        `https://one-blog-tr95.onrender.com/api/v1/post/comment/${_id}`,
         { text },
         {
           withCredentials: true,
@@ -65,7 +65,7 @@ const BlogDetails = () => {
     if (result.isConfirmed) {
       try {
         const response = await axios.delete(
-          `http://localhost:5000/api/v1/post/delete/${id}`,
+          `https://one-blog-tr95.onrender.com/api/v1/post/delete/${id}`,
           {
             withCredentials: true,
             headers: {

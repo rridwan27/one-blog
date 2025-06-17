@@ -20,9 +20,12 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchMongoUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/user/me", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://one-blog-tr95.onrender.com/api/v1/user/me",
+          {
+            withCredentials: true,
+          }
+        );
         setMongoUser(res.data.user);
       } catch (err) {
         console.error("Failed to fetch MongoDB user:", err);

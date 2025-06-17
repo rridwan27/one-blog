@@ -32,7 +32,7 @@ const SignIn = () => {
       return;
     }
     await axios.post(
-      "http://localhost:5000/api/v1/user/login",
+      "https://one-blog-tr95.onrender.com/api/v1/user/login",
       { email, password },
       {
         withCredentials: true,
@@ -77,7 +77,7 @@ const SignIn = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/api/v1/user/google-login",
+            "https://one-blog-tr95.onrender.com/api/v1/user/google-login",
             userProfile,
             {
               withCredentials: true,

@@ -57,7 +57,7 @@ const SignUp = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:5000/api/v1/user/register",
+        "https://one-blog-tr95.onrender.com/api/v1/user/register",
         userProfile,
         {
           headers: {
@@ -121,7 +121,7 @@ const SignUp = () => {
         };
 
         const res = await axios.post(
-          "http://localhost:5000/api/v1/user/google-auth",
+          "https://one-blog-tr95.onrender.com/api/v1/user/google-auth",
           userProfile,
           {
             headers: {

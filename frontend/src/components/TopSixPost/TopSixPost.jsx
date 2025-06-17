@@ -38,7 +38,7 @@ const TopSixPost = () => {
     setSaving(true);
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/post/wishlist/add/${postId}`,
+        `https://one-blog-tr95.onrender.com/api/v1/post/wishlist/add/${postId}`,
         {},
         {
           withCredentials: true,

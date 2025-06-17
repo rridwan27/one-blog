@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         Component: FeaturedBlogs,
         loader: () =>
           axios
-            .get("http://localhost:5000/api/v1/post/allpost", {
+            .get("https://one-blog-tr95.onrender.com/api/v1/post/allpost", {
               headers: {
                 "Content-Type": "application/json",
               },
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           axios
             .get(
-              `http://localhost:5000/api/v1/post/blog-details/${params.id}`,
+              `https://one-blog-tr95.onrender.com/api/v1/post/blog-details/${params.id}`,
               {
                 headers: {
                   "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           axios
             .get(
-              `http://localhost:5000/api/v1/post/blog-details/${params.id}`,
+              `https://one-blog-tr95.onrender.com/api/v1/post/blog-details/${params.id}`,
               {
                 headers: {
                   "Content-Type": "application/json",
