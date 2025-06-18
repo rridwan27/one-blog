@@ -12,8 +12,14 @@ const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { createUser, setUser, updateUser, googleSignIn, setLoading } =
-    use(AuthContext);
+  const {
+    createUser,
+    setUser,
+    updateUser,
+    googleSignIn,
+    setLoading,
+    setMongoUser,
+  } = use(AuthContext);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -138,6 +144,7 @@ const SignUp = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          setMongoUser(res.data.user);
           navigate(`${location.state ? location.state : "/"}`);
         }
       })

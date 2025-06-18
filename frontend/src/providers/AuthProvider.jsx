@@ -71,6 +71,7 @@ const AuthProvider = ({ children }) => {
   const authData = {
     user,
     mongoUser,
+    setMongoUser,
     setUser,
     loading,
     setLoading,

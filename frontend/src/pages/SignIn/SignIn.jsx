@@ -11,7 +11,8 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const { signIn, googleSignIn, setLoading, loading } = use(AuthContext);
+  const { signIn, googleSignIn, setLoading, loading, setMongoUser } =
+    use(AuthContext);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -90,6 +91,7 @@ const SignIn = () => {
           console.log("Google login response:", res.data);
 
           if (res.status === 200 && res.data?.success !== false) {
+            setMongoUser(res.data.user);
             toast.success("Logged in successfully");
             navigate(location.state ? location.state : "/");
           } else {
