@@ -20,6 +20,8 @@ const SignIn = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    setError("");
+
     if (password.length < 6) {
       setError("Password must be at least 6 characters");
       return;
@@ -32,35 +34,35 @@ const SignIn = () => {
       setError("Must contain at least one lowercase letter");
       return;
     }
-    const res = await axios.post(
-      "https://one-blog-tr95.onrender.com/api/v1/user/login",
-      { email, password },
-      {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    if (res.data.success) {
-      setMongoUser(res.data.user);
-      navigate(location.state ? location.state : "/");
-    } else {
-      toast.error(res.data?.message || "Login failed");
-    }
-    signIn(email, password)
-      .then((result) => {
+
+    try {
+      const res = await axios.post(
+        "https://one-blog-tr95.onrender.com/api/v1/user/login",
+        { email, password },
+        {
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (res.data.success) {
+        const result = await signIn(email, password);
         const user = result.user;
-        navigate(`${location.state ? location.state : "/"}`);
+
+        setMongoUser(res.data.user);
         toast.success("Logged in successfully");
-      })
-      .catch((error) => {
-        let errorMessage = "Incorrect email or password";
-        console.log(error);
-        setError(errorMessage);
-        setLoading(false);
-        toast.error(errorMessage);
-      });
+        navigate(location.state ? location.state : "/");
+      } else {
+        setError(res.data.message || "Login failed");
+        toast.error(res.data.message || "Login failed");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      const msg = err?.response?.data?.message || "Invalid email or password";
+      setError(msg);
+      toast.error(msg);
+      setLoading(false);
+    }
   };
 
   const handleGoogleSignIn = () => {
