@@ -80,6 +80,8 @@ const SignUp = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        setMongoUser(res.data.user);
+        navigate(`${location.state ? location.state : "/"}`);
       }
 
       setUser({

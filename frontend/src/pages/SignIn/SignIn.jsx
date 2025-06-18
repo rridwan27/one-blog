@@ -32,7 +32,7 @@ const SignIn = () => {
       setError("Must contain at least one lowercase letter");
       return;
     }
-    await axios.post(
+    const res = await axios.post(
       "https://one-blog-tr95.onrender.com/api/v1/user/login",
       { email, password },
       {
@@ -42,6 +42,12 @@ const SignIn = () => {
         },
       }
     );
+    if (res.data.success) {
+      setMongoUser(res.data.user);
+      navigate(location.state ? location.state : "/");
+    } else {
+      toast.error(res.data?.message || "Login failed");
+    }
     signIn(email, password)
       .then((result) => {
         const user = result.user;
