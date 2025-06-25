@@ -104,9 +104,9 @@ This backend API supports authentication, post handling, image uploads, comments
 
 ## 🧪 Running Locally
 
-1. `git clone https://github.com/yourusername/oneblog`
-2. `cd client && npm install && npm run dev`
-3. `cd server && npm install && npm run dev`
+1. ```git clone https://github.com/rridwan27/one-blog.git```
+2. ```cd client && npm install && npm run dev```
+3. ```cd server && npm install && npm run dev```
 
 Ensure `.env` is configured properly with:
 
