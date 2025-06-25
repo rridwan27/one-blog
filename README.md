@@ -5,18 +5,6 @@ Welcome to **OneBlog**, a modern blogging platform with a powerful full stack ar
 * 🖥️ **Frontend:** Built with React 19, Vite, Tailwind, and Firebase Auth.
 * 🔧 **Backend:** Node.js/Express server with MongoDB, JWT, Cloudinary, Multer, and Sharp.
 
----
-
-## 🧑‍💻 About Me
-
-🇧🇩 **Ridwan** – A passionate programmer from North South University, studying **BSc in EEE**.
-
-### 🔍 Currently Exploring:
-
-* ⚡ Next.js
-* 📊 TanStack Table
-* 🎮 Three.js
-* 🧠 React Query
 
 ---
 
