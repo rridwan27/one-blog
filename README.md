@@ -47,7 +47,6 @@ A modern blogging UI/UX platform where users can read, comment, like, and upload
 | ![Axios](https://img.shields.io/badge/axios-5A29E4?style=flat\&logo=axios\&logoColor=white) **Axios**                                | API client            |
 | ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat\&logo=react-router\&logoColor=white) **React Router v7** | Routing               |
 | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-%23FF5959?style=flat\&logo=sweetalert2\&logoColor=white) **SweetAlert2**     | Alerts/modals         |
-| ![Three.js](https://img.shields.io/badge/Three.js-black?style=flat\&logo=three.js\&logoColor=white) **Three.js**                     | 3D graphics support   |
 | ![Typewriter](https://img.shields.io/badge/Typewriter-000000?style=flat\&logo=javascript\&logoColor=white) **Typewriter**            | Typing effect         |
 | ![CountUp](https://img.shields.io/badge/CountUp-%232C8EBB?style=flat\&logo=javascript\&logoColor=white) **CountUp**                  | Counter animation     |
 
