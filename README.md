@@ -10,7 +10,7 @@ Welcome to **OneBlog**, a modern blogging platform with a powerful full stack ar
 
 ## 📸 Cover Image
 
-![Cover](https://github.blog/wp-content/uploads/2024/07/maxresdefault-1.jpg?fit=1280%2C720)
+![Cover](https://i.ibb.co/nMv5x1QT/blog.png)
 
 ---
 
